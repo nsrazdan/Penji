@@ -1,5 +1,5 @@
-// Simple CPP code to demonstrate simple LinkedList
-// writen by Nikhil Razdan
+// CPP code to demonstrate linked list
+// written by Nikhil Razdan
 #include <iostream>
 
 // Class to represent Node
@@ -10,7 +10,7 @@ class Node {
         Node(int data): data(data) {}
 };
 
-// Class to represent LinkedList with print functionality
+// Class to represent linked list with print functionality
 class LinkedList {
     public:
         Node* head;
@@ -18,13 +18,13 @@ class LinkedList {
 };
 
 // Print all nodes in linked list in order.
-// Works by checking if current node is nullptr. If it is not, then we print
-// out the data and set the current node to the next node. We initiaialize
-// the current node to the head.
+// Works by checking if current node (n in code) is nullptr. If it is not, 
+// then we print out the data and set the current node to the next node. 
+// We initialize the current node to the head.
 void LinkedList::print() {
     Node* n = head;
     while (n) {
-        std::cout << n->data << std::endl;
+        std::cout << n->data << " ";
         n = n->next;
     }
 }
@@ -46,7 +46,7 @@ int main() {
     /*
         We have nodes with data, but none of them are linked.
         Hence, our list is still just a head.
-        However, we have nodes as well
+        However, we have independent nodes as well:
         head -> nullptr
         node_a -> nullptr
         node_b -> nullptr
@@ -60,7 +60,7 @@ int main() {
     node_c->next = nullptr;
     
     /*
-        Now we finally have our next values iinitialized.
+        Now we have our next values initialized, which means the list is built.
         Thus, our list looks like:
         head -> node_a -> node_b -> node_c -> nullptr
     */
@@ -72,11 +72,12 @@ int main() {
         This will print out 1 2 3. Download the code and try it yourself!
     */
     
-    // Always remember to delete all allocated memory
+    // always remember to delete all allocated memory
     delete node_a;
     delete node_b;
     delete node_c;
     delete list;
+    
     return 0;
 }
 
